@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Text } from 'react-native';
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState<string>("");
@@ -20,6 +20,9 @@ export default function App() {
         <Button title="Add" onPress={addGoalHandler}/>
       </View>
       <View>
+        {
+          courseGoals.map((goal:string, index: number)=> <Text key={index}>{goal}</Text>)
+        }
       </View>
     </View>
   );
